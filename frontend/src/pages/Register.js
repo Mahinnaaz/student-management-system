@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     name: "",
@@ -43,7 +45,7 @@ function Register() {
       alert(res.data.message);
 
       if (res.data.success) {
-        window.location.href = "/login";
+        navigate("/login");
       }
 
     } catch {
@@ -124,9 +126,9 @@ function Register() {
         </form>
         <p style={{ textAlign: "center", marginTop: "15px" }}>
           Already have an account?{" "}
-          <a href="/login" style={{ color: "#38bdf8" }}>
+          <Link to="/login" style={{ color: "#38bdf8" }}>
             Login
-          </a>
+          </Link>
           
         </p>
 

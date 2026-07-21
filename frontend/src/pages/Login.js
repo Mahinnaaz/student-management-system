@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -24,9 +26,9 @@ function Login() {
         localStorage.setItem("semester", res.data.semester);
 
         if (res.data.role === "admin") {
-          window.location.href = "/admin/dashboard";
+          navigate("/admin/dashboard");
         } else {
-          window.location.href = "/student/dashboard";
+          navigate("/student/dashboard");
         }
       } else {
         alert(res.data.message);
@@ -68,9 +70,9 @@ function Login() {
 
         <p style={styles.text}>
           New Student?{" "}
-          <a href="/register" style={styles.link}>
+          <Link to="/register" style={styles.link}>
             Register Here
-          </a>
+          </Link>
         </p>
 
       </div>

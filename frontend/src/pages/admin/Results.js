@@ -32,7 +32,7 @@ function Results() {
   }, [form.course, subjects.length]);
 
   const getResults = async () => {
-    const res = await axios.get("http://localhost:5000/api/results");
+    const res = await axios.get("https://student-management-system-0rn7.onrender.com/api/results");
     setResults(res.data);
   };
 
@@ -40,7 +40,7 @@ function Results() {
   try {
 
     const res = await axios.get(
-      `http://localhost:5000/api/students/studentid/${form.studentId}`
+      `https://student-management-system-0rn7.onrender.com/api/students/studentid/${form.studentId}`
     );
 
     // console.log(res.data);
@@ -74,7 +74,7 @@ function Results() {
 
     if (editId) {
      await axios.put(
-      `http://localhost:5000/api/results/${editId}`,
+      `https://student-management-system-0rn7.onrender.com/api/results/${editId}`,
       {
         studentId: form.studentId,
         studentName: form.name,
@@ -89,7 +89,7 @@ function Results() {
      );
    } else {
       await axios.post(
-      "http://localhost:5000/api/results",
+      "https://student-management-system-0rn7.onrender.com/api/results",
       {
         studentId: form.studentId,
         studentName: form.name,
@@ -132,7 +132,7 @@ function Results() {
   };
 
   const deleteResult = async (id) => {
-    await axios.delete(`http://localhost:5000/api/results/${id}`);
+    await axios.delete(`https://student-management-system-0rn7.onrender.com/api/results/${id}`);
     getResults();
   };
 

@@ -10,7 +10,7 @@ function MyAttendance() {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/attendance/all?studentId=${studentId}`
+        `https://student-management-system-0rn7.onrender.com/api/attendance/all?studentId=${studentId}`
       );
       setData(res.data);
     } catch (err) {

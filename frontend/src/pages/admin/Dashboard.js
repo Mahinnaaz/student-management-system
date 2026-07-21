@@ -25,7 +25,7 @@ function Dashboard() {
   // 🔥 FETCH DATA
   const getStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/students");
+      const res = await axios.get("https://student-management-system-0rn7.onrender.com/api/students");
       setStudents(res.data || []);
     } catch {
       setStudents([]);
@@ -34,7 +34,7 @@ function Dashboard() {
 
   const getResults = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/results");
+      const res = await axios.get("https://student-management-system-0rn7.onrender.com/api/results");
       setResults(res.data || []);
     } catch {
       setResults([]);
@@ -76,11 +76,11 @@ function Dashboard() {
     try {
       if (editId) {
         await axios.put(
-          `http://localhost:5000/api/students/${editId}`,
+          `https://student-management-system-0rn7.onrender.com/api/students/${editId}`,
           { name, email, course, semester }
         );
       } else {
-        await axios.post("http://localhost:5000/api/students", {
+        await axios.post("https://student-management-system-0rn7.onrender.com/api/students", {
           name,
           email,
           course,
@@ -104,7 +104,7 @@ function Dashboard() {
   };
 
   const deleteStudent = async (id) => {
-    await axios.delete(`http://localhost:5000/api/students/${id}`);
+    await axios.delete(`https://student-management-system-0rn7.onrender.com/api/students/${id}`);
     getStudents();
   };
 

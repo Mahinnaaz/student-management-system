@@ -9,7 +9,7 @@ function ViewAttendance() {
   const location = useLocation();
 
   const studentName = location.state?.studentName;
-  
+
   const [attendance, setAttendance] = useState([]);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function ViewAttendance() {
         try {
 
         const res = await axios.get(
-            `http://localhost:5000/api/attendance/student/${studentId}`
+            `https://student-management-system-0rn7.onrender.com/api/attendance/student/${studentId}`
         );
 
         setAttendance(res.data);

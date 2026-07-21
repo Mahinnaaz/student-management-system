@@ -15,7 +15,7 @@ function MyResults() {
       try {
 
         const res = await axios.get(
-          `http://localhost:5000/api/results/student/${studentId}`
+          `https://student-management-system-0rn7.onrender.com/api/results/student/${studentId}`
         );
 
         console.log(res.data);

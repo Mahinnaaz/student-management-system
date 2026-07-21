@@ -36,7 +36,7 @@ function Register() {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://student-management-system-0rn7.onrender.com/api/auth/register",
         form
       );
 

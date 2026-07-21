@@ -180,17 +180,17 @@ function Dashboard() {
 
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
           <button className="btn btn-info"
-            onClick={() => (window.location.href = "/admin/report")}>
+            onClick={() => navigate("/admin/report")}>
             Report
           </button>
 
           <button className="btn btn-primary"
-            onClick={() => (window.location.href = "/admin/results")}>
+            onClick={() => navigate("/admin/results")}>
             Results
           </button>
 
           <button className="btn btn-warning"
-            onClick={() => window.location.href = "/admin/attendance"}>
+            onClick={() => navigate("/admin/attendance")}>
             Attendance
           </button>
 
